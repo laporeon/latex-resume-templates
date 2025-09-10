@@ -9,14 +9,14 @@
 \usepackage{titlesec}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
-\usepackage{fancyhdr}
-\usepackage{latexsym}
-\usepackage{marvosym}
 \usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
 \usepackage[portuguese]{babel}
 \usepackage{tabularx}
+\usepackage{fancyhdr}
 \input{glyphtounicode}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X}
 
 %----------FONT OPTIONS----------
 % sans-serif
@@ -69,20 +69,22 @@
     pdfpagemode=UseNone,
     pdfpagelayout=SinglePage,
     pdfnewwindow=true,
-    colorlinks=false,
+    colorlinks=true,
+    urlcolor=blue,
     pdfborder={0 0 0},
 }
 
 \begin{document}
 
 %----------HEADING----------
-\begin{center}
-    \textbf{\Huge \scshape Seu Nome} \\ \vspace{1pt}
-    Cidade, Estado $|$ +55 XX XXXX-XXXXX $|$ 
-    \href{mailto:example@gmail.com}{\underline{example@gmail.com}} $|$ 
-    \href{https://linkedin.com/in/username}{\underline{linkedin.com/in/username}} $|$
-    \href{https://github.com/username}{\underline{github.com/username}}
-\end{center}
+\begin{tabularx}{\linewidth}{@{} C @{}}
+    \textbf{\Huge \scshape Seu nome} \\[6.5pt]
+    {\raisebox{-0.01pt}{Cidade, UF}} \ $|$ \ 
+    \href{https://wa.me/+55XXXXXXX}{\raisebox{-0.01pt}{+55 XX XXXX-XXXXX}} \ $|$ \ 
+    \href{mailto:example@gmail.com}{\raisebox{-0.01pt}{example@gmail.com}} \ $|$ \ 
+    \href{https://linkedin.com/in/username}{\raisebox{-0.01pt}{linkedin.com/in/username}} \ $|$ \ 
+    \href{https://github.com/username}{\raisebox{-0.01pt}{github.com/username}}
+\end{tabularx}
 
 %-----------EXPERIENCE-----------
 \section{Experiência Profissional}
@@ -105,7 +107,7 @@
     \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
         \textbf{Nome da empresa} & Cidade, Estado  \\
-        \textit{\small Seu Cargo} & \textit{\small Mês Ano -- atual} \\
+        \textit{\small Seu Cargo} & \textit{\small Mês Ano -- Mês Ano} \\
     \end{tabular*}\vspace{-7pt}
     \begin{itemize}[label=\textbullet]
         \item{Conquistas \vspace{-2pt}}
@@ -120,7 +122,7 @@
     \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
         \textbf{Nome da empresa} & Cidade, Estado  \\
-        \textit{\small Seu Cargo} & \textit{\small Mês Ano -- atual} \\
+        \textit{\small Seu Cargo} & \textit{\small Mês Ano -- Mês Ano} \\
     \end{tabular*}\vspace{-7pt}
     \begin{itemize}[label=\textbullet]
         \item{Conquistas \vspace{-2pt}}
@@ -131,25 +133,15 @@
     \end{itemize}\vspace{-5pt}
 \end{itemize}
 
-
 %-----------EDUCATION-----------
 \section{Educação}
 \begin{itemize}[leftmargin=0.15in, label={}]
     \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
         \textbf{Nome da faculdade} & Cidade, Estado \\
-        \textit{\small Bacharelado em XXX} & \textit{\small Mês Ano -- Mês Ano} \\
+        \textit{\small Bacharelado em XXX} & \textit{\small Mês Ano -- atual} \\
     \end{tabular*}\vspace{-7pt}
 \end{itemize}
-
-\begin{itemize}[leftmargin=0.15in, label={}]
-    \vspace{-2pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{Nome da faculdade} & Cidade, Estado \\
-        \textit{\small Bacharelado em XXX} & \textit{\small Mês Ano -- Mês Ano} \\
-    \end{tabular*}\vspace{-7pt}
-\end{itemize}
-
 
 %-----------PROJECTS-----------
 \section{Projetos pessoais}
@@ -179,9 +171,7 @@
         \item{Features \vspace{-2pt}}
         \item{Features \vspace{-2pt}}
     \end{itemize}\vspace{-5pt}
-    
 
-    
 \end{itemize}
 
 %-----------PROGRAMMING SKILLS-----------

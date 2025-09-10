@@ -9,14 +9,14 @@
 \usepackage{titlesec}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
-\usepackage{fancyhdr}
-\usepackage{latexsym}
-\usepackage{marvosym}
 \usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
 \usepackage[portuguese]{babel}
 \usepackage{tabularx}
+\usepackage{fancyhdr}
 \input{glyphtounicode}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X}
 
 %----------FONT OPTIONS----------
 % sans-serif
@@ -69,20 +69,22 @@
     pdfpagemode=UseNone,
     pdfpagelayout=SinglePage,
     pdfnewwindow=true,
-    colorlinks=false,
+    colorlinks=true,
+    urlcolor=blue,
     pdfborder={0 0 0},
 }
 
 \begin{document}
 
 %----------HEADING----------
-\begin{center}
-    \textbf{\Huge \scshape Your Name} \\ \vspace{1pt}
-    City, State $|$ +55 XX XXXX-XXXXX $|$ 
-    \href{mailto:example@gmail.com}{\underline{example@gmail.com}} $|$ 
-    \href{https://linkedin.com/in/username}{\underline{linkedin.com/in/username}} $|$
-    \href{https://github.com/username}{\underline{github.com/username}}
-\end{center}
+\begin{tabularx}{\linewidth}{@{} C @{}}
+    \textbf{\Huge \scshape Your Name} \\[6.5pt]
+    {\raisebox{-0.01pt}{City, State}} \ $|$ \ 
+    \href{https://wa.me/+55XXXXXXX}{\raisebox{-0.01pt}{+55 +55 XX XXXX-XXXXX}} \ $|$ \ 
+    \href{mailto:example@gmail.com}{\raisebox{-0.01pt}{example@gmail.com}} \ $|$ \ 
+    \href{https://linkedin.com/in/username}{\raisebox{-0.01pt}{linkedin.com/in/username}} \ $|$ \ 
+    \href{https://github.com/username}{\raisebox{-0.01pt}{github.com/username}}
+\end{tabularx}
 
 %-----------EXPERIENCE-----------
 \section{Professional Experience}
@@ -135,15 +137,7 @@
     \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
         \textbf{College Name} & City, State \\
-        \textit{\small Degree in Course Name} & \textit{\small Month Year -- Month Year} \\
-    \end{tabular*}\vspace{-7pt}
-\end{itemize}
-
-\begin{itemize}[leftmargin=0.15in, label={}]
-    \vspace{-2pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{College Name} & City, State \\
-        \textit{\small Degree in Course Name} & \textit{\small Month Year -- Month Year} \\
+        \textit{\small Degree in Course Name} & \textit{\small Month Year -- ongoing} \\
     \end{tabular*}\vspace{-7pt}
 \end{itemize}
 
